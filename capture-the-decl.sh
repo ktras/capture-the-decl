@@ -3,8 +3,9 @@
 # example usage:
 # ./capture-the-decl.sh {name-of-file-with-list-of-use-stmts}.txt
 
-finaldecls="finaldecls-result.txt"
-tempdecls="temporarydecls.txt"
+argname=$(echo "$1" | cut -f1 -d '.')
+finaldecls="${argname}-final-decls.txt"
+tempdecls="${argname}-temporary-decls.txt"
 
 if test -f $finaldecls; then
     rm $finaldecls
